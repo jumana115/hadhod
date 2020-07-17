@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+<link rel="stylesheet" href="./style.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"rel="stylesheet"
+ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+  crossorigin="anonymous">
+
+  <style>
+     
+    ol{
+        position: relative;
+        display: flex;
+        transform-style: preserve-3d;
+        margin-left: 390px;
+        margin-top: 210px;
+    }
+    ol li{
+        position: relative;
+        list-style: none;
+        width: 90px;
+        height: 90px;
+        margin: 0 20px;
+    }
+    ol li span{
+        position: absolute;
+        top:0 ;
+        left:0;
+        width:100%;
+        height: 100%;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        background: #333;
+        color: rgba(255, 255, 255, 255);
+        font-size: 40px !important;
+        transition: 0.2s;
+    }
+    ol li::before{
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: #444444;
+        transform-origin: top;
+        transform: skewX(-42deg);
+    }
+    ol li::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -9px;
+        width: 9px;
+        height:100%;
+        background: #333333;
+        transform-origin: right;
+        transform: skewy(-41deg);
+    }
+    
+    ol li:hover span{
+        z-index:1000;
+        transition: 0.5s;
+        color: rgb(241, 241, 238);
+        box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
+    }
+    ol li:hover span:nth-child(5){
+        transform: translate(40px, -40px);
+        opacity: 1;
+    }
+     ol li:hover span:nth-child(4){
+        transform: translate(30px,-30px);
+        opacity: 0.8;
+    }
+    ol li:hover span:nth-child(3){
+        transform: translate(20px,-20px);
+        opacity: 0.6;
+    }
+    ol li:hover span:nth-child(2){
+        transform: translate(10px,-10px);
+        opacity: 0.4;
+    }
+    ol li:hover span:nth-child(1){
+        transform: translate(0px,0px);
+        opacity: 0.2;
+    } 
+    ol li:nth-child(1):hover span{
+        background: #3b5999;
+    }
+    ol li:nth-child(2):hover span{
+        background: #e4405f;
+    }
+    ol li:nth-child(3):hover span{
+        background: #c6b0f1;
+    }
+    ol li:nth-child(4):hover span{
+        background: #55acee;
+    }
+  </style>
+</head>
+<body>
+<!-- nav bar -->
+<ul>
+    <li class="dropdown">
+        <a  class="dropbtn"><img src="./menu.png" width="40" height="20"></a>
+        <div class="dropdown-content">
+          <a href="./book.html">كتب و قصص</a>
+          <a href="./video.html">عروض مرئية</a>
+          <a href="./game.html">ألعاب تعليمية</a>
+          <a href="./voicestory.html"> قصص صوتية</a>
+          
+        </div>
+      </li>
+    <li><a href="./index.html">الصفحة الرئيسية</a></li>
+    <li><a href="./why.html">هدهود</a></li>
+    <li><a class="lactive"  href="./contact.html">تواصل معنا</a></li>
+    <li><a href="./singin.html">تسجيل الدخول</a></li>
+    <li style="float: left;"><img src="logoo.PNG "  width="70px" height="70px" ></li>
+  </ul>
+        <!-- icon  -->
+        <ol >
+            <li>
+                <a href="https://www.facebook.com/Face.com">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fa fa-facebook"></span>
+            </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fa fa-instagram"></span>
+            </a>
+            </li>
+            <li>
+                <a href="https://github.com/">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fa fa-github"></span>
+            </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/explore">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fa fa-twitter"></span>
+            </a>
+            </li>
+        </ol>
+        <script src="./index.js"></script>
+    </body>
+</html>

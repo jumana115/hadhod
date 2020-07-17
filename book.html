@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+     <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      body{
+          justify-content: center;
+          align-items: center;
+      }
+      .container{
+          position: relative;
+          width: 1100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 30px ;
+      }
+      .container .card{
+          position: relative;
+          max-width: 300px;
+          height: 190px;
+          margin: 50px 30px;
+          background: #fff;
+          padding: 20px 35px;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 5px 50px #fee440; 
+          transition:0.3s ease-in-out;
+      }
+      .container .card:hover{
+       height: 420px;
+      }
+      .container .card .imgBx{
+          position: relative;
+          width: 300px;
+          height: 200px;
+          top: -70px;
+          z-index: 1;
+      }
+         /* الكلام تحت البوكس */
+      .container .card .content{
+          position: relative;
+          margin-top: -140px;
+          padding: 40px 15px ;
+          text-align: center;
+          color: #111;
+          visibility: hidden;
+          opacity: 0;
+          transition: 0.3s ease-in-out;
+      }
+      .container .card:hover .content{
+         visibility: visible;
+         opacity: 1;
+         margin-top: -40px;
+         transition-delay: 0.3s;
+
+      }
+      .container .card .imgBx  img{
+         max-width: 100%;
+         border-radius: 4px;
+      }
+   
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 40%; 
+  height:0;
+}
+.iframe-container iframe{
+  position:absolute;
+  top:20px;
+  left: 80px;
+  width: 1000px;
+  height: 400px;
+}
+h1{
+    text-align:center ;
+    color: #ff5400;
+}
+
+  </style>
+</head>
+<body>
+ 
+    <ul>
+        <li class="dropdown">
+            <a  class="dropbtn"><img src="./menu.png" width="40" height="20"></a>
+            <div class="dropdown-content">
+              <a href="./book.html">كتب و قصص</a>
+              <a href="./video.html">عروض مرئية</a>
+              <a href="./game.html">ألعاب تعليمية</a>
+              <a href="./voicestory.html"> قصص صوتية</a>
+            </div>
+          </li>
+        <li><a href="./index.html">الصفحة الرئيسية</a></li>
+        <li><a href="./why.html">هدهود</a></li>
+        <li><a href="./contact.html">تواصل معنا</a></li>
+        <li><a href="./singin.html">تسجيل الدخول</a></li>
+        <li style="float: left;"><img src="logoo.PNG "  width="70px" height="70px" ></li>
+      </ul>
+
+    <!-- الصفحة  -->
+    <h1 class="t3d" style="text-align: center;"> لماذا نقرأ</h1>
+    <br>
+    <div class="iframe-container">
+        <iframe width="560" height="315"
+         src="https://www.youtube.com/embed/vfP_C-cuUD0?start=14 ?&autoplay=1"
+         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+          
+    </div>
+    <br>
+    <h2 class="t3d" style="color:#ff5400 ; float: right;">  هيا لنقرأ بعض الكتب </h2>
+    <div class="container">
+        <div class="card">
+            <div class="imgBx">
+                <img src="./indeximg/pdf.jpg" height="230px" width="380px" >
+            </div>
+            <div class="content">
+              
+                <h2>كتب للقراءة </h2>
+                <p> في عالم هدهود يمكنك الانتقال الى عالم المعرفة الذى تحبه و يناسب ميولك
+                      من خلال اطلاعك وقراءتك لما يعرضه لك عالم هدهود من الكتب و القصص </p>
+                      <br> <br>
+                 <a class="aa"  href="./pdfbook.html"> كتب pdf </a>     
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBx">
+                <img src="./indeximg/baybook.jpg" >
+            </div>
+            <div class="content">
+                <h2>كتب للبيع </h2>
+                <p>هنا يمكنك اختيار  ما تريد شراؤه من كتب  و قصص يقدمها لك عالم هدهود </p>
+            <br> <br>
+                <a class="aa"  href="./buybook.html"> انتقل لشراء</a>   
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <script src="./index.js"></script>
+</body>
+</html>

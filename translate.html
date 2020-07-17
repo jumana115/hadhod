@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>translate</title>
+    
+    <style>
+        body{
+            background:#7BD8F4;
+        }
+        .aback{
+     position: absolute;
+     margin-left: 20px;
+     margin-top: 10px;
+ }
+        p{position: absolute;  font-size: 30px; margin-left: 350px; margin-top: 30px;
+           text-shadow: 1px 1px gray ; font-weight:bolder;
+            border-bottom: 3px solid rgb(197, 197, 4);}
+            /* الكلمات */
+        .one{
+          position: absolute;  margin-left: 240px;  margin-top: 230px;
+        }
+        .two{
+          position: absolute;   margin-left: 45px;  margin-top: 160px;
+        }
+        .three{
+          position: absolute;   margin-left: 350px;   margin-top: 144px;
+        }
+        .four{
+          position: absolute;  margin-left: 110px;   margin-top: 295px;
+        }
+        .five{
+          position: absolute;   margin-left: 470px;   margin-top: 190px;
+        }
+        .a6{
+          position: absolute;  margin-left: 470px;   margin-top: 410px;
+        }
+        .a7{
+          position: absolute;  margin-left: 600px;   margin-top: 510px;
+        }
+        .a8{
+          position: absolute;  margin-left: 560px;   margin-top: 290px;
+        }
+        .a9{
+          position: absolute;  margin-left: 305px;   margin-top: 340px;
+        }
+        .a10{
+          position: absolute;  margin-left: 1090px;   margin-top: 490px;
+        }
+        .a11{
+          position: absolute;  margin-left: 270px;   margin-top: 490px;
+        }
+        .a12{
+          position: absolute;  margin-left: 725px;   margin-top: 355px;
+        }
+        .a13{
+          position: absolute;  margin-left: 610px;   margin-top: 160px;
+        }
+        .a14{
+          position: absolute;  margin-left: 890px;   margin-top: 295px;
+        }
+        .a15{
+          position: absolute;  margin-left: 790px;   margin-top: 200px;
+        }
+        .a16{
+          position: absolute;  margin-left: 780px;   margin-top: 490px;
+        }
+        .a17{
+          position: absolute;  margin-left: 960px;   margin-top: 400px;
+        }
+        .a18{
+          position: absolute;  margin-left: 1000px;   margin-top: 240px;
+        }
+        .a19{
+          position: absolute;  margin-left: 1130px;   margin-top: 340px;
+        }
+        .a20{
+          position: absolute;  margin-left: 70px;   margin-top: 460px;
+        }
+        .a21{
+          position: absolute;  margin-left: 1150px;   margin-top: 160px;
+        }
+    </style>
+</head>
+<body>
+    <a class="aback" href="./game.html"><img src="./indeximg/back.png" width="40px"  height="40px"></a>
+    <p>اضغط على الكلمة لتتعرف على معناها في اللغة الأنجليزية</p>
+    <h1 class="one" onclick="one()" id=one1>شكراً</h1>
+    <h1 class="two" onclick="two()" id=two1> من فضلك </h1>
+    <h1 class="three" onclick="three()" id=three1> أب </h1>
+    <h1 class="four" onclick="a4()" id=a44> بيت </h1>
+    <h1 class="five" onclick="a5()" id=a55> ماء </h1>
+    <h1 class="a6" onclick="a6()" id=a66> صديق </h1>
+    <h1 class="a7" onclick="a7()" id=a77> سماء </h1>
+    <h1 class="a8" onclick="a8()" id=a88> سيارة </h1>
+    <h1 class="a9" onclick="a9()" id=a99> خريطة  </h1>
+    <h1 class="a10" onclick="a10()" id=a10> قلم    </h1>
+    <h1 class="a11" onclick="a11()" id=a11>  غداء  </h1>
+    <h1 class="a12" onclick="a12()" id=a12>  كتاب  </h1>
+    <h1 class="a13" onclick="a13()" id=a13> شمس    </h1>
+    <h1 class="a14" onclick="a14()" id=a14> أم    </h1>
+    <h1 class="a15" onclick="a15()" id=a15>  عشاء   </h1>
+    <h1 class="a16" onclick="a16()" id=a16>  الأخت    </h1>
+    <h1 class="a17" onclick="a17()" id=a17>   معلم    </h1>
+    <h1 class="a18" onclick="a18()" id=a18>   باص    </h1>
+    <h1 class="a19" onclick="a19()" id=a19>   قبعة   </h1>
+    <h1 class="a20" onclick="a20()" id=a20>   الأخ  </h1>
+    <h1 class="a21" onclick="a21()" id=a21>   يلعب  </h1>
+<!-- الغيوم  -->
+    <script>
+        let onearry=[ "Thank You" ,  "شكراً"
+        ];
+        let counter =0; 
+        function one(){
+            if(onearry[counter]==undefined){ counter = 0;};
+        document.getElementById("one1").innerHTML = onearry[counter];
+         counter = counter + 1;
+        };
+        // الثانية 
+        let twoarry=[ "Please" , "  من فضلك "  ];
+        let counter2 =0; 
+        function two(){
+            if(twoarry[counter2]==undefined){ counter2 = 0;};
+        document.getElementById("two1").innerHTML = twoarry[counter2];
+         counter2 = counter2 + 1;
+        };
+    //    الثالثة 
+    let threearry=[ "Father " ,   "أب "
+        ];
+        let counter3 =0; 
+        function three(){
+            if(threearry[counter3]==undefined){ counter3 = 0;};
+        document.getElementById("three1").innerHTML = threearry[counter3];
+         counter3 = counter3 + 1;
+        };
+        // الرابع 
+        let arry4=[ " House  " ,   "بيت  "    ];
+        let counter4 =0; 
+        function a4(){
+            if(arry4[counter4]==undefined){ counter4 = 0;};
+        document.getElementById("a44").innerHTML = arry4[counter4];
+         counter4 = counter4 + 1;
+        };
+        // 5
+        let arry5=[  " Water  " , " ماء  " ];
+        let counter5 =0; 
+        function a5(){
+            if(arry5[counter5]==undefined){ counter5 = 0;};
+        document.getElementById("a55").innerHTML = arry5[counter5];
+         counter5 = counter5 + 1;
+        };
+        // 6
+          let arry6=[ " Friend  " ,  " صديق  "  ];
+        let counter6 =0; 
+        function a6(){
+            if(arry6[counter6]==undefined){ counter6 = 0;};
+        document.getElementById("a66").innerHTML = arry6[counter6];
+         counter6 = counter6 + 1;
+        };
+         // 7
+         let arry7=[ " Sky  " ,  " سماء  "  ];
+        let counter7 =0; 
+        function a7(){
+            if(arry7[counter7]==undefined){ counter7 = 0;};
+        document.getElementById("a77").innerHTML = arry7[counter7];
+         counter7 = counter7 + 1;
+        };
+         // 8
+         let arry8=[ " Car  " ,  " سيارة  "  ];
+        let counter8 =0; 
+        function a8(){
+            if(arry8[counter8]==undefined){ counter8 = 0;};
+        document.getElementById("a88").innerHTML = arry8[counter8];
+         counter8 = counter8 + 1;
+        };
+            // 9
+            let arry9=[ " Map  " ,  " خريطة  "  ];
+        let counter9 =0; 
+        function a9(){
+            if(arry9[counter9]==undefined){ counter9 = 0;};
+        document.getElementById("a99").innerHTML = arry9[counter9];
+         counter9 = counter9 + 1;
+        };
+                // 10
+                let arry10=[ " Pen  " ,  " قلم   "  ];
+        let counter10 =0; 
+        function a10(){
+            if(arry10[counter10]==undefined){ counter10 = 0;};
+        document.getElementById("a10").innerHTML = arry10[counter10];
+         counter10 = counter10 + 1;
+        };
+                // 11
+                let arry11=[ " Lunch  " ,  " غداء   "  ];
+        let counter11 =0; 
+        function a11(){
+            if(arry11[counter11]==undefined){ counter11 = 0;};
+        document.getElementById("a11").innerHTML = arry11[counter11];
+         counter11 = counter11 + 1;
+        };
+       // 12
+        let arry12=[ " Book  " ,  " كتاب    "  ];
+        let counter12 =0; 
+        function a12(){
+            if(arry12[counter12]==undefined){ counter12 = 0;};
+        document.getElementById("a12").innerHTML = arry12[counter12];
+         counter12 = counter12 + 1;
+        };
+       // 13
+        let arry13=[ " Sun  " ,  "   شمس "  ];
+        let counter13 =0; 
+        function a13(){
+            if(arry13[counter13]==undefined){ counter13 = 0;};
+        document.getElementById("a13").innerHTML = arry13[counter13];
+         counter13 = counter13 + 1;
+        };
+           // 14
+           let arry14=[ " Mother  " ,  "  أم "  ];
+        let counter14 =0; 
+        function a14(){
+            if(arry14[counter14]==undefined){ counter14 = 0;};
+        document.getElementById("a14").innerHTML = arry14[counter14];
+         counter14 = counter14 + 1;
+        };
+        // 15
+         let arry15=[ " Dinner  " ,  "  عشاء "  ];
+        let counter15 =0; 
+        function a15(){
+            if(arry15[counter15]==undefined){ counter15 = 0;};
+        document.getElementById("a15").innerHTML = arry15[counter15];
+         counter15 = counter15 + 1;
+        };
+         // 16
+         let arry16=[ " Sister  " ,  "  الأخت "  ];
+        let counter16 =0; 
+        function a16(){
+            if(arry16[counter16]==undefined){ counter16 = 0;};
+        document.getElementById("a16").innerHTML = arry16[counter16];
+         counter16 = counter16 + 1;
+        };
+         // 17
+         let arry17=[ " Teacher  " ,  "  معلم  "  ];
+        let counter17 =0; 
+        function a17(){
+            if(arry17[counter17]==undefined){ counter17 = 0;};
+        document.getElementById("a17").innerHTML = arry17[counter17];
+         counter17 = counter17 + 1;
+        };
+         // 18
+         let arry18=[ " Bus  " ,  "  باص   "  ];
+        let counter18 =0; 
+        function a18(){
+            if(arry18[counter18]==undefined){ counter18 = 0;};
+        document.getElementById("a18").innerHTML = arry18[counter18];
+         counter18 = counter18 + 1;
+        };
+          // 19
+          let arry19=[ " Hat  " ,  "  قبعة   "  ];
+        let counter19 =0; 
+        function a19(){
+            if(arry19[counter19]==undefined){ counter19 = 0;};
+        document.getElementById("a19").innerHTML = arry19[counter19];
+         counter19 = counter19 + 1;
+        };
+        // 20
+         let arry20=[ " Brother  " ,  "  الأخ   "  ];
+        let counter20 =0; 
+        function a20(){
+            if(arry20[counter20]==undefined){ counter20 = 0;};
+        document.getElementById("a20").innerHTML = arry20[counter20];
+         counter20 = counter20 + 1;
+        };
+          // 21
+          let arry21=[ " Play  " ,  "  يعلب  "  ];
+        let counter21 =0; 
+        function a21(){
+            if(arry21[counter21]==undefined){ counter21 = 0;};
+        document.getElementById("a21").innerHTML = arry21[counter21];
+         counter21 = counter21 + 1;
+        };
+    </script>
+</body>
+</html>

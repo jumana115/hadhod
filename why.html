@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>why</title>
+<link rel="stylesheet" href="./style.css">
+<style>
+    .container
+{
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+.container .column
+{
+	width: 25%;
+	height: 100%;
+	float: left;
+	border-right: 1px solid rgba(0,0,0,.5);
+	box-sizing: border-box;
+	z-index: 1;
+}
+.container .column:last-child
+{
+	border-right: none;
+}
+.container .column .content
+{
+	position: relative;
+	height: 100%;
+}
+.container .column .content h3
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	background: rgba(82, 80, 80, 0.267);
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	color: rgb(255, 255, 255);
+	font-size: 70px;
+	text-shadow: 2px 2px black;
+}
+.container .column .content .box
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(100%);
+	box-sizing: border-box;
+	padding: 40px;
+	background: rgba(255,255,255,1);
+	text-align: center;
+	transition: 0.5s;
+	opacity: 0;
+}
+.container .column.active .content .box
+{
+	opacity: 1;
+	transform: translateY(-50%);
+}
+.container .column .content .box h2
+{
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	color: #262626;
+}
+.container .column .content .box p
+{
+	color: #262626;
+	font-size: 18px;
+}
+.container .column .bg
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: -1;
+}
+.container .column.active .bg.bg4
+{
+
+	background: url(./indeximg/pk4.png);
+   width: 500px;
+   height: 400px;
+   margin-left: 250px;
+   margin-top: 100px;
+    transition: 0.5s;
+    background-repeat: no-repeat;
+    
+}
+.container .column.active .bg.bg3
+{
+    background: url(./indeximg/pk3.png);
+    width: 430px;
+   height: 430px;
+   margin-left: 600px;
+   margin-top: 100px;
+    transition: 0.5s;
+    background-repeat: no-repeat;
+    
+}
+.container .column.active .bg.bg2
+{
+	background: url(./indeximg/pk2.png);
+    width: 500px;
+   height: 500px;
+   margin-left: 200px;
+   margin-top: 100px;
+    transition: 0.5s;
+    background-repeat: no-repeat;
+    
+}
+
+</style>
+</head>
+<body>
+<!-- nav bar -->
+<ul>
+    <li class="dropdown">
+        <a  class="dropbtn"><img src="./menu.png" width="40" height="20"></a>
+        <div class="dropdown-content">
+          <a href="./book.html">كتب و قصص</a>
+          <a href="./video.html">عروض مرئية</a>
+          <a href="./game.html">ألعاب تعليمية</a>
+          <a href="./voicestory.html"> قصص صوتية</a>
+          
+        </div>
+      </li>
+    <li><a href="./index.html">الصفحة الرئيسية</a></li>
+    <li><a class="lactive" href="./why.html">هدهود</a></li>
+    <li><a href="./contact.html">تواصل معنا</a></li>
+    <li><a href="./singin.html">تسجيل الدخول</a></li>
+    <li style="float: left;"><img src="logoo.PNG "  width="70px" height="70px" ></li>
+  </ul>
+
+          <!-- مربعات الشاشة -->
+          <div class="container">
+            <div class="column active">
+                <div class="content">
+                    <h3>شعارنا</h3>
+                    <div class="box">
+                        <h2 style="color: #F5B400;">هدي بس مع هدهود لا تهدي </h2>
+                        <p> هو شعار عالم هدهود الذى وجهه للناشئة و يحمل بين جنباتة مجموعة من القيم التى يهدف الى الاتصاف بها 
+                            متخذا مفرداته من اللهجة الكويتية ليكون محاكيا للحياة اليومية بمضمونة الذى يحث على تجنب الاستعجال والسرعة في المواضع و المواقف
+                            الغير محمودة , مع الحرص على المنافسة و الاستزادة
+                            في طلب المعرفة مع عدم التراخي والتهاون
+                        </p>
+                    </div>
+                </div>
+                <div class="bg bg4"></div> 
+            </div>
+            <div class="column">
+                <div class="content">
+                    <h3>أهدافنا</h3>
+                    <div class="box">
+                        <h2  style="color: #F5B400;" >اهداف عالم هدهود</h2>
+                        <p>   تشجيع الناشئة على القراءة * 
+                            <br>
+                            توفير الكتب المفيدة و القصص باسلوب شيق و جاذب *
+                            <br>
+                            استثمار وقت الفراغ لدى الناشأ * 
+                            <br>
+                            تنمية القدرات و المواهب لدى الناشئة من خلال العاب تعلينية تربوية  *
+                            <br>
+                           سهولة اقنتناء الكتب و الحصول عليها في غضون دقائف *
+                            <br>
+                             إيجاد يديل ناجح و محفز عن المكتبات التقليدية *
+                        </p>
+                    </div>
+                </div>
+                <div class="bg bg3"></div>
+            </div>
+            <div class="column">
+                <div class="content">
+                    <h3>لماذا هدهود</h3>
+                    <div class="box">
+                        <h2  style="color: #F5B400;"> لماذا هدهود</h2>
+                        <p>   تأثرا بصفات و دور الهدهد في قصة سيدنا سليمان حيث اتصف بعدة صفات و المواهب 
+                            كالدقة في النقل المعلومات خاصة عندما وصف العرش /الأمانة/ العلم / الطاعة و الاستجابة للقائد /العلم بجغرافيا الارض و مواقع البلدان /معرفته بانظمة الحكم حيث وصف سبأ بالمملكة /دقة الملاحظه حيث ميز قوة المملكه ونظام حكمها /قوة الإيمان حيث أنكر عبادتهم للشمس / النشاط و المبادرة/ الصدق  فكانت هذه الصفات و القيم يحب كلا منا التحلي بها  </p>
+                    </div>
+                </div>
+                <div class="bg bg2"></div>
+            </div>
+            <div class="column">
+                <div class="content">
+                    <h3>قصة هدهود</h3>
+                    <div class="box">
+                        <h2  style="color: #F5B400;" >قصة الهدهود</h2>
+                        <p> شخصية هدهود تم استنباطها من قصة سيدنا سليمان عليه السلام مع الهدهد  حيث تدور احداثها 
+                         عندما كان سيدنا سليمان عليه السلام يطمئن على جنوده من الطيور لاحظ عدم تواجد الهدهد دون استئذانه فغضب   
+                        وعندما جاء الهدهد بخبر عن مملكة سبأ تراجع عن عقابه وقال الهدهد انه رأى قوما تحكمهم امرأة يسجدون للشمس دون الله
+                    فارسله سليمان برسالة يدعوهم الى عبادة الله فكان الهدهد سببا في هداية مملكة سبأ  </p>
+                    </div>
+                </div>
+                <div class="bg bg1"></div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript">
+            $(document).on('mouseover', '.container .column', function(){
+                $(this).addClass('active').siblings().removeClass('active')
+            })
+        </script>
+<!-- ن -->
+
+        <script src="./index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Quiz App</title>
+  <style>
+      *, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded;
+  }
+  
+  :root {
+      /* استخدم الhue عشان أحد لون الخلفه  */
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+  }
+  
+  body {
+    --hue: var(--hue-neutral);
+    padding: 0 ;
+    margin-top: 150px;
+    margin-left: 370px ;
+    width: 700px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./indeximg/background.jpg);
+  
+    background-size: 700px , 700px ;
+  }
+   
+  .container {
+    height: 320px;  
+    width: 800px;
+    max-width: 80%;
+    background-color: rgba(248, 252, 42, 0.699);
+    border-radius: 5px;
+    padding: 50px;
+    box-shadow: 0 0 9px 3px black;
+  }
+  
+  .btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 10px 10px;
+    color: white;
+    outline: none;
+    font-size: 20px;
+ 
+  }
+  
+  .btn:hover {
+    opacity: 0.7;
+  }
+  /* حق الاجابة الصح  */
+  .btn.correct {
+    --hue: var(--hue-correct);
+    color: black;
+  }
+  /* حق الاجابة الحطأ */
+  .btn.wrong {
+    --hue: var(--hue-wrong);
+  }
+  
+  .start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hide {
+    display: none;
+  }
+  .qstyle{
+    border-style: solid;
+    text-align: center;
+    background-color: white;
+    height: 37px;
+    padding: 3px;
+    font-size: 24px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="question-container" class="hide">
+      <div id="question" class="qstyle" >Question</div>
+      <div id="answer-buttons" class="btn-grid">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+        <button class="btn">Answer 4</button>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="start-btn" class="start-btn btn">Start</button>
+      <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
+  </div>
+  <div style="margin-top: 50px;"></div>
+  <a style="background: lightcoral;font-size: 25px;margin-left: 250px;text-decoration: none;
+  color: lightcyan;padding: 20px; border: ridge;" href="./optionpop.html">back</a>
+  <script>
+      const startButton = document.getElementById('start-btn')
+const nextButton = document.getElementById('next-btn')
+const qContainerElement = document.getElementById('question-container')
+const qElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById('answer-buttons')
+
+let shuffledQ, currentQIndex
+
+startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+  currentQIndex++
+  setNextQuestion()
+})
+
+function startGame() {
+  startButton.classList.add('hide')
+  shuffledQ = questions.sort(() => Math.random() - .5)
+  currentQIndex = 0
+  qContainerElement.classList.remove('hide')
+  setNextQuestion()
+}
+
+function setNextQuestion() {
+  resetState()
+  showQuestion(shuffledQ[currentQIndex])
+}
+
+function showQuestion(question) {
+  qElement.innerText = question.question
+  question.answers.forEach(answer => {
+    const button = document.createElement('button')
+    button.innerText = answer.text
+    button.classList.add('btn')
+    if (answer.correct) {
+      button.dataset.correct = answer.correct
+    }
+    button.addEventListener('click', selectAnswer)
+    answerButtonsElement.appendChild(button)
+  })
+}
+
+function resetState() {
+  clearStatusClass(document.body)
+  nextButton.classList.add('hide')
+  while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+  }
+}
+
+function selectAnswer(e) {
+  const selectedButton = e.target
+  const correct = selectedButton.dataset.correct
+  setStatusClass(document.body, correct)
+  Array.from(answerButtonsElement.children).forEach(button => {
+    setStatusClass(button, button.dataset.correct)
+  })
+  if (shuffledQ.length > currentQIndex + 1) {
+    nextButton.classList.remove('hide')
+  } else {
+    startButton.innerText = 'Return'
+    startButton.classList.remove('hide')
+  }
+}
+
+function setStatusClass(element, correct) {
+  clearStatusClass(element)
+  if (correct) {
+    element.classList.add('correct')
+  } else {
+    element.classList.add('wrong')
+  }
+}
+
+function clearStatusClass(element) {
+  element.classList.remove('correct')
+  element.classList.remove('wrong')
+}
+
+const questions = [
+  {
+    question: 'How many letters of English language?',
+    answers: [
+      { text: '26', correct: true },
+      { text: '24 ', correct: false },
+      { text: '20 ', correct: false },
+      { text: '35',      correct: false },
+      
+    ]
+  },
+  {
+    question: 'How many days in a week?',
+    answers: [
+      { text: '7', correct: true },
+      { text: '4', correct: false },
+      { text: '6',       correct: false },
+      { text:  '3' ,        correct: false },
+    ] 
+  },
+  {
+    question:  'How many colors of the rainbow?',
+    answers: [
+      { text: '5', correct: false },
+      { text: '7',    correct: true },
+      { text: '9',   correct: false },
+      { text: '1', correct: false },
+    ]
+  },
+  {
+    question: ' plants needs to live :',
+    answers: [
+        { text: 'sunlight', correct: true },
+        { text: 'icecrem  ', correct: false },
+        { text: 'candy'  , correct: false },
+        { text: 'holidays',  correct: false },
+    ]
+  },
+  {
+    question: ' who’s the first woman won the Nobel Prize? ' ,
+    answers: [
+      { text: 'Marie Curie ', correct: true },
+      { text: 'A. Einstein',    correct:false },
+      { text: 'Maria Mayer',   correct: false },
+      { text: 'Francis ARNOLD', correct: false },
+    ]
+    },
+
+]
+  </script>
+</body>
+</html>

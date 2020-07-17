@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+
+     <style>
+         body{
+             margin: 0;  padding: 0;
+         }
+         .cont{
+             max-width: 1000px;
+             margin: 100px auto;
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: space-around;
+         }
+         .card{
+             position: relative;
+             margin-top: 20px  0 ;
+             width: 300px;
+             height: 400px;
+             background: #fff; 
+             transform-style: preserve-3d;
+             transform: perspective(2000px);
+             transition: 1s;
+             box-shadow: inset  300px 0 50px rgb(221, 219, 223);
+         }
+         .card:hover{
+            transform: perspective(2000px) rotate(-10deg);
+            box-shadow: inset 20px  0 50px #FEEB71 ;
+            z-index: 1000;
+         }
+         .card .imgbox{
+           position: relative;
+           width: 100%;
+           height: 100%;
+           border: 1px solid #000;
+           box-sizing: border-box;
+           transform-origin: left;
+           z-index: 1;
+           transition: 1s;
+         }
+         .card:hover .imgbox{
+             transform: rotateY(-135deg);
+             
+
+         }
+         .card .imgbox .img{
+             position: absolute;
+             top: 0; left: 0;
+             width: 100%; height: 100%;
+             object-fit: cover;
+         }
+         .card .det{
+             position: absolute;
+             top: 0; left: 0;
+             box-sizing: border-box;
+             padding: 33px;
+             text-align: right;
+             color: #873EE0;
+             font-size: 20px;
+         }
+         .card .imgbox a{
+             border: springgreen;
+         }
+         /* slide show */
+.slidershow{
+
+  width: 800px;
+  height: 500px;
+  overflow: hidden;
+}
+.mid{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.navigation{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.bar{
+    width: 50px;
+  height: 10px;
+  border: 2px solid #fff;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar:hover{
+  background:#9b5de5
+}
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+.slides{
+  margin-top: 30px;
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+.slide{
+  width: 20%;
+  transition: 0.6s;
+}
+.slide img{
+  width: 100%;
+  height: 100%;
+}
+#r1:checked ~ .s1{
+  margin-left: 0;
+}
+#r2:checked ~ .s1{
+  margin-left: -20%;
+}
+#r3:checked ~ .s1{
+  margin-left: -40%;
+}
+#r4:checked ~ .s1{
+  margin-left: -60%;
+}
+#r5:checked ~ .s1{
+  margin-left: -80%;
+}
+#r6:checked ~ .s1{
+  margin-left: -100%;
+}
+#r7:checked ~ .s1{
+  margin-left: -120%;
+}
+#r8:checked ~ .s1{
+  margin-left: -140%;
+}
+span{
+  position: absolute;
+  margin-top: 1070px;
+  margin-left:-150px;
+}
+     </style>
+
+</head>
+<body>
+    <ul>
+      <li class="dropdown">
+        <a  class="dropbtn"><img src="./menu.png" width="40" height="20"></a>
+        <div class="dropdown-content">
+          <a href="./book.html">كتب و قصص</a>
+          <a href="./video.html">عروض مرئية</a>
+          <a href="./game.html">ألعاب تعليمية</a>
+          <a href="./voicestory.html"> قصص صوتية</a>
+        </div>
+      </li>
+      <li><a href="./index.html">الصفحة الرئيسية</a></li>
+      <li><a href="./why.html">هدهود</a></li>
+      <li><a href="./contact.html">تواصل معنا</a></li>
+      <li><a href="./singin.html">تسجيل الدخول</a></li>
+      <li style="float: left;"><img src="logoo.PNG "  width="70px" height="70px" ></li>
+    </ul>
+    
+  
+        
+    <!-- سلايد شو -->
+  <div class="slidershow mid">
+    <div class="slides">
+        <input type="radio" name="r" id="r1"  checked>
+        <input type="radio" name="r" id="r2"  >
+        <input type="radio" name="r" id="r3"  >
+        <input type="radio" name="r" id="r4"  >
+        <input type="radio" name="r" id="r5"  >
+        <input type="radio" name="r" id="r6"  >
+        <input type="radio" name="r" id="r7"  >
+        <input type="radio" name="r" id="r8"  >
+      <div class="slide s1" >
+          <img style="width: 800px;" src="./indeximg/slide0.jpeg" alt="">
+      </div>
+
+      <div class="slide">
+          <img style="width: 800px;"src="./indeximg/slide1.jpeg" alt="">
+      </div>
+
+      <div class="slide">
+          <img style="width: 800px;" src="./indeximg/slide2.jpeg" alt="">
+      </div>
+
+      <div class="slide">
+          <img style="width: 800px;" src="./indeximg/slide3.jpeg" alt="">
+      </div>
+      <div class="slide">
+        <img style="width: 800px;" src="./indeximg/slide4.jpeg" alt="">
+    </div>
+
+    <div class="slide">
+      <img style="width: 800px;" src="./indeximg/slide5.jpeg" alt="">
+  </div>
+
+  <div class="slide">
+    <img style="width: 800px;" src="./indeximg/slide6.jpeg" alt="">
+</div>
+<div class="slide">
+  <img style="width: 800px;" src="./indeximg/slide7.jpeg" alt="">
+</div>
+    </div>
+    <!-- مربعات السلايد -->
+    <div class="navigation">
+        <label for="r1"  class="bar"></label>
+        <label for="r2"  class="bar"></label>
+        <label for="r3"  class="bar"></label>
+        <label for="r4"  class="bar"></label>
+        <label for="r5"  class="bar"></label>
+        <label for="r6"  class="bar"></label>
+        <label for="r7"  class="bar"></label>
+        <label for="r8"  class="bar"></label>
+    </div>
+</div>
+
+<br>
+<h2 class="t3d" style="color:#ff5400 ; float: right; margin-top: 520px; margin-right: 30px;"> كتب مجانية للقراءة  </h2>
+<br><br>
+
+
+<div style="margin-top: 600px;" class="cont">
+    <div class="card">
+        <div class="imgbox">
+            <img src="./indeximg/pdf1.jpg" width="297"   height="398">
+        </div>
+        <div class="det">
+            <h2> الحبة العاشرة  </h2>
+            <p>صديقى..فى هذه القصة درس فى عاقبة الإهمال ، فقد ضاع عليا كثير من الوقت والجهد..ولا تستهين بالأمور الصغيرة فإن الصغير مع الصغير يصبح كبيرا</p>
+            <br>
+            <a class="aa" href= "http://www.wonderland-stories.com/stories_pdf/%D9%82%D8%B5%D8%A9%20%D8%A7%D9%84%D8%AD%D8%A8%D8%A9%20%D8%A7%D9%84%D8%B9%D8%A7%D8%B4%D8%B1%D8%A9.pdf"> رابط القصة </a>
+        </div>
+    </div>
+
+
+
+        <div class="card">
+            <div class="imgbox">
+                <img src="./indeximg/pdf2.jpg" width="297"   height="398">
+            </div>
+            <div class="det">
+                <h2>أرنوب و الكذب </h2>
+                <p>قال أرنوب للحمار : إن عم أيوب يفضل عليك البقرة ، فهى تحلب له اللبن ويأكل منها الجبن والزبد ، فحزن الحمار لأنه يعمل فى الحقل ويحمل البرسيم للبقرة ، وفى المساء ذهب أرنوب إلى البقرة وقال لها : إن عم أيوب يفضل الحمار عليك لأنه يركبه ويساعده فى التنقل</p>
+                <br>
+                <a class="aa" href="http://www.wonderland-stories.com/stories_pdf/%D9%82%D8%B5%D8%A9%20%D8%A3%D8%B1%D9%86%D9%88%D8%A8%20%D9%88%D8%A7%D9%84%D9%83%D8%B0%D8%A8.pdf"> رابط القصة</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="imgbox">
+                <img src="./indeximg/pdf3.jpg" width="297"   height="397">
+            </div>
+            <div class="det">
+                <h2> لماذا لا نتقاسم</h2>
+                <p>خرج تلاميذ الصف السادس إلى حديقة المدرسة مع معلمتهم السيدة عبير وفى درس الزراعة أخذت السيدة عبير تعلمهم كيف يحرثون الأرض من أجل زراعة الأشجار وقالت للتلاميذ المجتمعين حولها : تجب الزراعة بحرص شديد بحيث تحصل كل شجرة على ما يكفيها من نور الشمس ومن الماء</p>
+               <br>
+                <a class="aa" href="http://www.wonderland-stories.com/stories_pdf/%D9%82%D8%B5%D8%A9%20%D9%84%D9%85%D8%A7%D8%B0%D8%A7%20%D9%84%D8%A7%20%D9%86%D8%AA%D9%82%D8%A7%D8%B3%D9%85.pdf">رابط  القصة</a>
+            </div>
+        </div>
+        <script src="./index.js"></script>
+</body>
+</html>

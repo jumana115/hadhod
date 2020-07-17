@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buybook</title>
+    <link rel="stylesheet" href="style.css">
+     <style>
+         @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+      *{
+          margin: 0;
+          padding: 0;
+          text-decoration: none;
+      }
+      /* كتب */
+.middle{
+  position:relative;
+  left: 16%;
+  transform: translate(-10%);
+}
+.card{
+display:inline-block;
+position:relative;
+cursor: pointer;
+margin-top: 20px;
+margin-left: 10px;
+margin-bottom: 100px;
+width: 290px;
+height: 430px;
+}
+.front,.back{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform .6s linear;
+}
+.front img{
+  height: 100%;
+  width: 300px;
+}
+.back img{
+  height: 100%;
+  width: 300px;
+}
+.front{
+  transform: perspective(600px) rotateY(0deg);
+}
+.back{
+  transform: perspective(600px) rotateY(180deg);
+}
+.card:hover > .front{
+  transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover > .back{
+  transform: perspective(600px) rotateY(0deg);
+}
+/* slide show */         /* slide show */
+.slidershow{
+  width: 800px;
+  height: 500px;
+  overflow: hidden;
+}
+.mid{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.navigation{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.bar{
+    width: 50px;
+  height: 10px;
+  border: 2px solid #fff;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar:hover{
+  background:#9b5de5
+}
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+.slides{
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+.slide{
+  margin-top: 20px;
+  width: 20%;
+  transition: 0.6s;
+}
+.slide img{
+  width: 100%;
+  height: 100%;
+}
+#r1:checked ~ .s1{
+  margin-left: 0;
+}
+#r2:checked ~ .s1{
+  margin-left: -20%;
+}
+#r3:checked ~ .s1{
+  margin-left: -40%;
+}
+#r4:checked ~ .s1{
+  margin-left: -60%;
+}
+#r5:checked ~ .s1{
+  margin-left: -80%;
+}
+#r6:checked ~ .s1{
+  margin-left: -100%;
+}
+#r7:checked ~ .s1{
+  margin-left: -120%;
+}
+#r8:checked ~ .s1{
+  margin-left: -140%;
+}
+span{
+  position: absolute;
+  margin-top: 1070px;
+  margin-left:-150px;
+}
+
+       /* cart */
+        h1{
+            width: 3%;
+            position: relative;
+            top: 50px;
+            left: 90%;
+            cursor: pointer;
+        }
+        h1::before{
+            content: attr(data-count);
+            position: absolute;
+            color: azure;
+            right: 16px;
+            font-size: 15px;
+            text-align: center;
+            top: -12px;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            opacity: 0;
+        }
+         h1.zero:before{
+             opacity: 1;
+         }
+        section{
+            width: 900px;
+           display: flex;
+           margin: 50px auto; 
+
+        }
+        h5{
+            width: 50px;
+            margin-left: 130px;
+            margin-top: -90px;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+        /* شكل الزر */
+        button{
+            padding: 7px;
+            background: red;
+            border: none;
+            box-shadow: 3px 2px grey;
+            outline-width: none;
+            font-weight:900;
+            color: #fafafa;
+            cursor: pointer;
+            margin-top: -80px;
+            margin-left: 120px;
+            font-size: 15px;
+        }
+        .select{
+            width:900px ;
+            height: 880px;
+            background: rgb(34, 34, 34);
+            position: absolute;
+            padding: 5%;
+            top: -1000px;
+            left: 16%;
+            transition: 0.5s;
+            overflow-y: auto;;
+            margin: auto;
+        }
+        .select.display{
+            top: 10px;
+        }
+        .select div{
+            width: 100%;
+            height: 200px;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            margin: 5px auto;
+        }
+        .select div img {
+            width: 200px;
+            height: 100%;
+        }
+    
+        .select div h5,
+        .select div button{
+            position: absolute;
+            left: 345px;
+            top: 120px;
+            color: white;
+        } 
+        .select div button{
+            left: 420px;
+            top: 110px;
+        }
+        .select div span{
+            display: none;
+        }
+
+  </style>
+
+</head>
+<body>
+    <ul>
+        <li class="dropdown">
+          <a  class="dropbtn"><img src="./menu.png" width="40" height="20"></a>
+          <div class="dropdown-content">
+            <a href="./book.html">كتب و قصص</a>
+            <a href="./video.html">عروض مرئية</a>
+            <a href="./game.html">ألعاب تعليمية</a>
+            <a href="./voicestory.html"> قصص صوتية</a>
+            
+          </div>
+        </li>
+        <li><a href="./index.html">الصفحة الرئيسية</a></li>
+        <li><a href="./why.html">هدهود</a></li>
+        <li><a href="./contact.html">تواصل معنا</a></li>
+        <li><a href="./singin.html">تسجيل الدخول</a></li>
+        <li style="float: left;"><img src="logoo.PNG "  width="70px" height="70px" ></li>
+      </ul>
+            
+         <br>
+         <br>
+        <!-- سلايد شو -->
+      <div class="slidershow mid">
+          <div class="slides">
+              <input type="radio" name="r" id="r1"  checked>
+              <input type="radio" name="r" id="r2"  >
+              <input type="radio" name="r" id="r3"  >
+              <input type="radio" name="r" id="r4"  >
+              <input type="radio" name="r" id="r5"  >
+              <input type="radio" name="r" id="r6"  >
+              <input type="radio" name="r" id="r7"  >
+              <input type="radio" name="r" id="r8"  >
+              <div class="slide s1" >
+                <img style="width: 800px;" src="./indeximg/slide0.jpeg" alt="">
+            </div>
+      
+            <div class="slide">
+                <img style="width: 800px;"src="./indeximg/slide1.jpeg" alt="">
+            </div>
+      
+            <div class="slide">
+                <img style="width: 800px;" src="./indeximg/slide2.jpeg" alt="">
+            </div>
+      
+            <div class="slide">
+                <img style="width: 800px;" src="./indeximg/slide3.jpeg" alt="">
+            </div>
+            <div class="slide">
+              <img style="width: 800px;" src="./indeximg/slide4.jpeg" alt="">
+          </div>
+      
+          <div class="slide">
+            <img style="width: 800px;" src="./indeximg/slide5.jpeg" alt="">
+        </div>
+      
+        <div class="slide">
+          <img style="width: 800px;" src="./indeximg/slide6.jpeg" alt="">
+      </div>
+      <div class="slide">
+        <img style="width: 800px;" src="./indeximg/slide7.jpeg" alt="">
+      </div>
+          </div>
+          <!-- مربعات السلايد -->
+          <div class="navigation">
+              <label for="r1"  class="bar"></label>
+              <label for="r2"  class="bar"></label>
+              <label for="r3"  class="bar"></label>
+              <label for="r4"  class="bar"></label>
+              <label for="r5"  class="bar"></label>
+              <label for="r6"  class="bar"></label>
+              <label for="r7"  class="bar"></label>
+              <label for="r8"  class="bar"></label>
+          </div>
+      </div>
+      <br>
+    <h2 class="t3d" style="color:#ff5400 ;margin-top: 490px; margin-right: 30px; "> كتب يمكنك اقتناؤها </h2> 
+    <br><br>
+    <!-- cart -->
+    <h1><i class="fa fa-shopping-cart"></i></h1>
+    
+    <section>
+        <div>
+             <div class="card middle">
+             <div class="front">
+        <img src="./indeximg/book1.jpeg" >
+    </div>
+    <div class="back">
+        <img src="./indeximg/book11.jpeg" >
+       </div>
+      </div>
+            <h5>3kd</h5>
+            <span></span>
+            <button>أضف للسلة</button>
+        </div>
+        <!-- 2 -->
+        <div>
+          <div class="card middle" >
+            <div class="front">
+                <img src="./indeximg/book33.jpeg" >
+            </div>
+            <div class="back">
+                <img src="./indeximg/book3.jpeg" >
+            </div>
+              </div>
+            <h5>7kd</h5>
+            <span></span>
+            <button>أضف للسلة</button>
+        </div>
+        <!-- 3s -->
+        <div>
+            <div class="card middle" >
+                <div class="front">
+                    <img src="./indeximg/book2.jpeg" >
+                </div>
+                <div class="back">
+                    <img src="./indeximg/book22.jpeg" >
+                </div>
+                  </div>     
+            <h5>5kd</h5>
+        
+            <span></span>
+            <button>أضف للسلة</button>
+        </div>
+    </section>
+    <div class="select"></div>
+</body>
+</html>
+
+
+<!-- javascript -->
+<script type="text/javascript">
+ let noti = document.querySelector('h1');
+ let select = document.querySelector('.select');
+let button = document.getElementsByTagName('button');
+for( but of button){
+   but.addEventListener('click' , (e)=>{
+       let add = Number(noti.getAttribute('data-count') || 0);
+       noti.setAttribute('data-count' , add + 1);
+       noti.classList.add('zero');
+        //    حق القائمة
+       let parent = e.target.parentNode;
+       let clone = parent.cloneNode(true)
+       select.appendChild(clone);
+       clone.lastElementChild.innerText = "اشتر الآن";
+       
+       if(clone){
+           noti.onclick =()=>{
+               select.classList.toggle('display');
+           }
+       }
+          
+    })
+}
+</script>

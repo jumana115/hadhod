@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>option</title>
+    
+    <style>
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  .scene{
+      position: absolute;
+      width:100% ;
+      height:100vh ;
+      background-image: url(./indeximg/back2.jpg);
+      background-repeat: no-repeat;
+       background-size:cover;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+     align-items: center;
+  }
+  .scene i{
+      position: absolute;
+      top: -250px;
+      background: rgba(255, 255, 255, 0.5);
+      animation: animatestars linear infinite;
+  }
+  @keyframes animatestars{
+      0%{transform: translateY(0);}
+      100%{transform: translateY(200vh);}
+  }
+  .scene .bird{
+      position: relative;
+      animation: animate 0.2s ease infinite;
+  }
+  @keyframes animate{
+      0%{ transform: translateY(-4px);}
+      50%{transform: translateY(4px);}
+  }
+  .scene .bird::before{
+      content: '';
+      position: absolute;
+      bottom:-200px;
+      left:50%;
+      transform: translateX(-50%);
+      width:10px ;
+      height: 200px;
+      background: linear-gradient(#fca311 ,transparent);
+  }
+  .scene .bird::after{
+      content: '';
+      position: absolute;
+      bottom:-300px ;
+      left:50%;
+      transform: translateX(-50%);
+      width:10px ;
+      height: 200px;
+      background: linear-gradient(#fca311 ,transparent);
+      filter: blur(20px);
+  }
+ button{
+     position:relative;
+     margin-top:200px;
+     padding: 30px;
+     font-size: 30px;
+     border-radius: 50%;
+     background-color: #F4D301;
+     border: none;
+     box-shadow: 5px 5px 1px 1px #cfd2cd;
+     margin-left: 130px;
+   
+ }
+ .buttonmarg{
+     margin-left: 650px;
+    
+ }
+ a{
+     text-decoration: none;
+     color: white;
+ }
+ .aback{
+     position: absolute;
+     margin-left: -1060px;
+     margin-top: 10px;
+ }
+    </style>
+</head>
+<body>
+    <div class="scene">
+       <div class="bird">
+           <img src="./indeximg/rokcet.png" width="120px" height="120px">
+       </div>
+    </div>
+    <button><a href="./hangman-en.html">English</a></button>
+    <button class="buttonmarg"><a href="hangarbic.html">العربية</a></button>
+    <a class="aback" href="./game.html"><img src="./indeximg/back.png" width="40px"  height="40px"></a>
+    <script>
+        function stars(){
+            let count = 50;
+            let scene = document.querySelector('.scene');
+            let i = 0; 
+            while (i< count){
+                let star =document.createElement('i');
+                let x = Math.floor(Math.random() * window.innerWidth);
+                let duration = Math.random()*1;
+                let h = Math.random()*100;
+
+                star.style.left  = x + 'px' ; 
+                star.style.width = 1 + 'px' ;
+                star.style.height = h + 'px' 
+                star.style.animationDuration = duration + 's' ; 
+
+                scene .appendChild(star)
+                i++
+            }
+        }
+        stars();
+    </script>
+</body>
+</html>

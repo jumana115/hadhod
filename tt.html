@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tt</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        img{
+            position:absolute;
+        }
+           body{
+            background:#7BD8F4;
+        }
+        .aback{
+     position: absolute;
+     margin-left: 20px;
+     margin-top: 10px;
+ }
+ h1
+ {
+      font-size: 30px;
+     text-align: center ;
+    
+      margin-top: 30px;
+      text-shadow: 1px 1px gray ; 
+      font-weight:bolder;
+      border-bottom: 3px solid rgb(197, 197, 4);}
+
+           /* الكلمات */
+           .one{
+            margin-left: 240px;  margin-top: 230px;
+        }
+    </style>
+</head>
+<body>
+    <h1> اضغط على الكلمة لتتعرف على معناها في اللغة الأنجليزية   </h1>
+    <img  style="margin-left: 40px;  margin-top:30px;" src="./indeximg/cloudhd.PNG "  width="150px" height="150px" >
+    <!-- <img src="./indeximg/cloudhd.PNG "  width="150px" height="150px" >
+    <img src="./indeximg/cloudhd.PNG "  width="150px" height="150px" >
+    <img src="./indeximg/cloudhd.PNG "  width="150px" height="150px" >
+    <img src="./indeximg/cloudhd.PNG "  width="150px" height="150px" >
+    <img src="./indeximg/cloudhd.PNG "  width="150px" height="150px" >
+    <img src="./indeximg/cloudhd.PNG "  width="150px" height="150px" >
+    <img src="./indeximg/cloudhd.PNG "  width="150px" height="150px" > -->
+
+
+
+    <!-- text -->
+    <div class="one" onclick="one()" id=one1>شكراً</div>
+
+
+
+    <script>
+             let onearry=[ "Thank You" ,  "شكراً"
+        ];
+        let counter =0; 
+        function one(){
+            if(onearry[counter]==undefined){ counter = 0;};
+        document.getElementById("one1").innerHTML = onearry[counter];
+         counter = counter + 1;
+        };
+    </script>
+</body>
+</html>

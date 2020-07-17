@@ -1,0 +1,138 @@
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Bootstrap 4 CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <title>animal name</title>
+ 
+
+</head>
+<body style="background-image: url(./images/background.jpg);">
+<div class="container-md">
+  <h1 style="height: 60px; background-color: #ffffff; border: 3px solid rgb(234, 238, 3); opacity: 0.4;"
+   class="text-center">Hangman</h1>
+
+  <div style="color: red; " class="float-right"><b>:تخمينات خاطئة </b><span id='mistakes'>0</span> of <span id='maxWrong'></span></div>
+  <br>
+  <img src="./images/right1.png"
+   style="width:500px;height: 450px; position:absolute;">
+  <div class="text-center">
+    <img id='hangmanPic' src="./images/0.jpg" alt="">
+    <p><b>: خمن اسم الحيوان </b></p>
+    <p  id="wordSpotlight">The word to be guessed goes here</p>
+    <div  id="keyboard"></div>
+    <br>
+    <button class="btn btn btn-danger" onClick="reset()">إعادة </button>
+    <a style="padding: 12px;  margin-bottom: 20px;"  href="./option.html" class="badge badge-success">العودة</a>
+  </div> 
+</div>
+
+<script>
+  var animal = [
+	"أسد",
+	"قرد",
+	"فيل",
+	"زرافة",
+	"حصان",
+	"قطة",
+	"نمر",
+	"حمار وحشي ",
+	"خروف",
+	"أرنب",
+	"بطة",
+	"كلب",
+	"حية",
+]
+
+let answer = '';
+let maxWrong = 6;
+let mistakes = 0;
+let guessed = [];
+let wordStatus = null;
+
+function randomWord() {
+  answer = animal[Math.floor(Math.random() * animal.length)];
+}
+
+function letterButtons() {
+  let buttonsa = 'أبتثجحخدذرزسشصضطظعغفقكلمنهةويا'.split('').map(letter =>
+    `
+      <button
+        class="btn btn btn-warning m-1 col-1 "
+        id='` + letter + `'
+        onClick="handleGuess('` + letter + `')" 
+      >
+        ` + letter + `
+      </button>
+    `).join('');
+
+  document.getElementById('keyboard').innerHTML = buttonsa;
+}
+
+function handleGuess(chosenLetter) {
+  guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+  document.getElementById(chosenLetter).setAttribute('disabled', true);
+
+  if (answer.indexOf(chosenLetter) >= 0) {
+    guessedWord();
+    checkIfGameWon();
+  } else if (answer.indexOf(chosenLetter) === -1) {
+    mistakes++;
+    updateMistakes();
+    checkIfGameLost();
+    updateHangmanPicture();
+  }
+}
+
+function updateHangmanPicture() {
+  document.getElementById('hangmanPic').src = './images/' + mistakes + '.jpg';
+}
+
+function checkIfGameWon() {
+  if (wordStatus === answer) {
+    document.getElementById('keyboard').innerHTML = ' !!اجابة صحيحة احسنت ';
+  }
+}
+
+function checkIfGameLost() {
+  if (mistakes === maxWrong) {
+    document.getElementById('keyboard').innerHTML = 'اقتربت من الجواب حاول مره اخرى ';
+    document.getElementById('wordSpotlight').innerHTML = 'الجواب كان  ' + answer;
+   
+  }
+}
+
+function guessedWord() {
+  wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+
+  document.getElementById('wordSpotlight').innerHTML = wordStatus;
+}
+
+function updateMistakes() {
+  document.getElementById('mistakes').innerHTML = mistakes;
+}
+
+function reset() {
+  mistakes = 0;
+  guessed = [];
+  document.getElementById('hangmanPic').src = './images/0.jpg';
+
+  randomWord();
+  guessedWord();
+  updateMistakes();
+  letterButtons();
+}
+
+document.getElementById('maxWrong').innerHTML = maxWrong;
+
+randomWord();
+letterButtons();
+guessedWord();
+
+</script>
+
+</body>
+</html>

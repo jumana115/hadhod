@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+<link rel="stylesheet" href="./style.css">
+
+<style>
+  
+    .container{
+        max-width:100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px , 1fr));
+        grid-template-rows:   minmax(100px , auto);
+        margin: 40px;
+        grid-gap: 10px;
+    }
+    .container .box{
+         background:#8bc928;
+         padding: 20px;
+         display: grid;
+         font-size: 30px;
+         place-items:center;
+         text-align:center ;
+         color: rgb(0, 0, 0);
+         transition: 0.5s;
+    }
+    .container .box:hover{
+        background:#daddd8;
+    }
+    .container .box img {
+        position: relative;
+        max-width: 100px;
+        margin-bottom: 10px;
+    }
+    .container .box:nth-child(1){
+    
+        grid-row:  span 3;
+    }
+    .container .box:nth-child(2){
+    
+    grid-column:  span 2;
+}
+
+  
+    a{
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+    <ul>
+        <li class="dropdown">
+            <a  class="dropbtn"><img src="./menu.png" width="40" height="20"></a>
+            <div class="dropdown-content">
+              <a href="./book.html">كتب و قصص</a>
+              <a href="./video.html">عروض مرئية</a>
+              <a href="./game.html">ألعاب تعليمية</a>
+              <a href="./voicestory.html"> قصص صوتية</a>
+              
+            </div>
+          </li>
+        <li><a href="./index.html">الصفحة الرئيسية</a></li>
+        <li><a href="./why.html">هدهود</a></li>
+        <li><a href="./contact.html">تواصل معنا</a></li>
+        <li><a href="./singin.html">تسجيل الدخول</a></li>
+        <li style="float: left;"><img src="logoo.PNG "  width="70px" height="70px" ></li>
+      </ul>
+		</div>
+       <h1 class="t3d" style="text-align: center; color: #7222D3; margin-top:4px;"> ألعب مع هدهود</h1>
+       <!-- كونتينر -->
+       <div class="container">
+        
+           <div class="box">
+               <div class="content">
+                <a href="./option.html"> <img src="./indeximg/hangman.png" > </a>
+                   <p>خمن اسم الحيوان</p>
+               </div>
+           </div>
+        
+       
+           <div class="box">
+            <div class="content">
+                <a href="./calc.html"> <img src="./indeximg/clc.png"  ></a>
+                <p>احسب الأرقام مع هدهود</p>
+            </div>
+        </div>
+    
+        
+   
+        <div class="box">
+            <div class="content">
+                <a href="./optionpop.html"><img src="./indeximg/pop.png"  ></a>
+                <p>اختر الجواب الصحيح </p>
+            </div>
+        </div>
+        
+
+        <div class="box">
+            <div class="content">
+                <a href="./optionmap.html"><img src="./indeximg/map.png"  ></a>
+                <p> استكشف مع الرحالة هدهود</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+                <a href="./behaver.html"><img src="./indeximg/good.png" ></a>  
+                <p>ما هو السلوك الصحيح</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+                <a href="./translate.html"><img src="./indeximg/trans.png" ></a>  
+                <p> تعرف على الكلمات </p>
+            </div>
+        </div>
+       </div>
+        
+        
+
+        <script src="./index.js"></script>
+    </body>
+</html>
