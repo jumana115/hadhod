@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       *{
+          margin: 0;  padding: 0;
+          box-sizing: border-box
+        }
+        /* body  */
+        body {
+            justify-self: center;
+            align-items: center;
+            background-color:#caf0f8;
+            min-height: 100vh;           
+        }
+        .container{
+            position: relative;
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-left: 130px;
+        }
+/* خصائص البوكس */
+        .container .card{
+            position: relative;
+            height: 250px;
+            background: #ffffff;
+            display: flex;
+            width: 45%;
+            margin: 30px 0 ;
+            border-radius: 20px;
+        }
+        .container .card .imgBx{
+            position: absolute;
+            top: 0;  left: 0; 
+            width: 100%;
+            height: 100%;
+            background: #FEE95D;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+            border-radius: 20px;
+        }
+        .container .card:hover .imgBx{
+            width: 150px;
+            height: 150px;
+            left: -75px;
+            top: calc(50% - 75px);
+            transition: 0.5s ease-in-out;
+            background-color: #f15bb5;
+        }
+        .container .card .imgBx:before{
+          content: attr(data-text);
+          position: absolute;
+          bottom: 0;
+          left: 0; 
+           width: 100%;
+          text-align: center;
+          font-size: 4em ;
+          color: rgba(255, 255, 255, 0.322) ;
+          font-weight: 700;
+        }
+        .container .card:hover .imgBx img{
+         max-width: 75px;        
+        }
+        .container .card .content{
+            position: absolute;
+            right: 0; 
+            width: cala(100% -75px) ;
+            height: 100%;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+             text-align: center;
+        }
+        .container .card .content a{
+            color: white;
+            background-color: #A873E8;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 10px solid #A873E8;
+            box-shadow: 3px  2px;
+            text-align: center;
+        }
+        /* عالم هدهود */
+      #text{
+          margin-left:725px ;
+          margin-top: 30px;
+          position: absolute;
+          color: #fee440;
+          text-align: center;
+          font-weight: 700;   font-size: 12em;
+          line-height: 0.9em; 
+          letter-spacing: 2px;
+          text-shadow: -2px  2px 0 #666, -4px  4px  0 rgb(156, 153, 153) ,
+                       -6px 6px 0 #666 , -8px 8px 0 #666 ,
+                     -10px 10px 0 #666 ,  -12px 12px 0 #666 ,
+                     -14px  14px 0 #666 , -16px 16px 0 #666,
+                     -18px   18px 0  #666 , -20px 20px 0 #f8e777 ; 
+      }
+      /* الخفليه  */
+        .banner {
+            position:relative;  
+            width:1263px; 
+            height:97vh;
+           
+        }
+        /* وضع الغيوم  */
+        .banner .clouds{
+            position: absolute;
+            top: 0;  left: 0; width: 100%;  height: 100%;
+            overflow: hidden;
+        }
+        .banner .clouds img{
+            position: absolute;
+            bottom: 0;  
+            max-width: 100%;
+            animation: animate calc(8s * var(--i)) linear infinite;
+        }  
+        @keyframes animate{
+            0%{transform: translateX(-100%);}
+            100%{transform: translateX(100%); }
+        }
+        /* navebar code */
+        
+
+    </style>
+</head>
+<body >
+    <ul>
+        <li class="dropdown">
+            <a  class="dropbtn"><img src="./menu.png" width="40" height="20"></a>
+            <div class="dropdown-content">
+              <a href="./book.html">كتب و قصص</a>
+              <a href="./video.html"> عروض مرئية</a>
+              <a href="./game.html">ألعاب تعليمية</a>
+              <a href="./voicestory.html"> قصص صوتية</a>
+              
+            </div>
+          </li>
+        <li><a class="lactive" href="./index.html">الصفحة الرئيسية</a></li>
+        <li><a href="./why.html">هدهود</a></li>
+        <li><a href="./contact.html">تواصل معنا</a></li>
+        <li><a href="./singin.html">تسجيل الدخول</a></li>
+        <li style="float: left;"><img src="logoo.PNG "  width="70px" height="70px" ></li>
+       
+      </ul>
+    
+      
+    <!-- الخلفية  -->
+    <div class = "banner">          
+        <div id="text" > عالم <br> هدهود</div>
+        <img style="width: 900px ;height: 600px;" src="./indeximg/bird.png">
+
+    <div class= "clouds"> 
+        <img src="./indeximg/cloud1.png" style="--i:1;"> 
+        <img src="./indeximg/cloud2.png" style="--i:2;"> 
+        <img src="./indeximg/cloud3.png" style="--i:3;"> 
+        <img src="./indeximg/cloud4.png" style="--i:4;"> 
+        <img src="./indeximg/cloud5.png" style="--i:5;"> 
+    </div>    
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="imgBx" data-text="إقرأ">
+                <img src="./indeximg/boo.png" width="90px" height="90px" >
+            </div>
+            <div class="content">
+                <div>
+                    <h2>كتب وقصص</h2>
+              <br>
+                   <p class="txetp"> هلا بك في عالم هدهود  عالم المتعة و الفائدة والتى يقدمها لك  من 
+                       خلال تقديم وعرض العديد من الكتب و القصص  المفيدة والمتميزة حيث  يمكنك قرءتها و اقتنائنها من خلال موفقع عالم هدهود </p> 
+                   <br>
+ 
+                    <a href="./book.html"> هيا لنقرأ </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="imgBx" data-text="شاهد">
+                <img src="./indeximg/video.png" width="90px" height="90px" >
+            </div>
+            <div class="content">
+                <div>
+                    <h2>عروض مرئية تعليميه</h2> <br>
+                    <p class="txetp"> من خلال العروض المرئية التعليميه في عالم هدهود يمكنك تنمية حصيلتك المعرفية و المعلوماتية باسلوب شيق و مثير  ابق معنا وتمتع بالمشاهده  </p>
+                
+                    <br>
+                    <a href="./video.html"> شاهد وتعلم </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="imgBx" data-text=" اسمع ">
+                <img src="./indeximg/v.png" width="90px" height="90px" >
+            </div>
+            <div class="content">
+                <div>
+                    <h2>  كتب وقصص صوتية </h2> <br>
+                    <p class="txetp"> مع سحر الكلمات وهمس الاحرف تمتع معنا و شاركنا عالم هدهود المسموع حيث تستطيع سماع اجمل الكتب والقصص باسلوب شيق ينقلك الى عالم جميل</p>
+                    <p class="txetp"> مرحبا بك </p>
+                    <br>
+                    <a href="./voicestory.html">استمع لقصصنا </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="imgBx" data-text="العب معي ">
+                <img src="./indeximg/game.png" width="90px" height="90px" >
+            </div>
+            <div class="content">
+                <div>
+                    <h2>  ألعاب تعليمية تربوية </h2> <br>
+                    <p class="txetp"> من اهم وابرز اساليب التعلم الحديثة هو التعلم باللعب لذا حرص عالم هدهود ان يوفر لاحبائة زوار موقعه مجموعة من الالعاب التعليمية التربوية ليحقق لهم  الجمع بين المتعة و الفائدةي </p>
+                    <br>
+                <p> </p>
+                    <a href="./game.html">هيا لنعلب </a>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
